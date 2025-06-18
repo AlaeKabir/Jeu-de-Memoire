@@ -4,10 +4,10 @@
 
 .custom-navbar .navbar-brand,
 .custom-navbar .nav-link {
-  color: #7b1f61 !important; 
+  color: #6e2359 !important; 
   font-weight: 600;
 }
 
 .custom-navbar .nav-link:hover {
-  color: hotpink !important; /* Hot pink on hover */
+  color: hotpink !important; 
 }

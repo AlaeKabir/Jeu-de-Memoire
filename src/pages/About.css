@@ -1,0 +1,20 @@
+.about-page {
+  padding: 40px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: #6e2359; 
+}
+
+p {
+  color: #6e2359;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
