@@ -1,0 +1,13 @@
+.custom-navbar {
+  background-color: rgb(247, 205, 241) !important;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #7b1f61 !important; 
+  font-weight: 600;
+}
+
+.custom-navbar .nav-link:hover {
+  color: hotpink !important; /* Hot pink on hover */
+}
