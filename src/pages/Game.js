@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
-import initialCards from "../data/cards";
-//import "./Game.css"; 
+import initialCards from "../assets/cards";
 
 function Game() {
   const [cards, setCards] = useState([]);
