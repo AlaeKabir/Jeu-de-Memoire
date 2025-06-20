@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 
 function Game() {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const difficulty = location.state?.selectedDifficulty || "Easy";
   const theme = location.state?.selectedTheme || "Hello Kitty";
 
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [matched, setMatched] = useState([]);
+  const [startTime, setStartTime] = useState(null);
+  const [endTime, setEndTime] = useState(null);
 
   useEffect(() => {
     let numberOfPairs = 3;
@@ -18,10 +22,9 @@ function Game() {
 
     const themeKey = theme.toLowerCase().replace("é", "e").replace(/\s/g, "");
 
-    
     const cardsForTheme = Array.from({ length: numberOfPairs }, (_, index) => ({
       id: index,
-      img: `/assets/${themeKey}/${themeKey}${index + 1}.png`, // 👈 Ex: /assets/hellokitty/hellokitty1.png
+      img: `/assets/${themeKey}/${themeKey}${index + 1}.png`,
     }));
 
     const duplicated = [...cardsForTheme, ...cardsForTheme];
@@ -30,6 +33,7 @@ function Game() {
       .sort(() => Math.random() - 0.5);
 
     setCards(shuffled);
+    setStartTime(Date.now());
   }, [difficulty, theme]);
 
   const handleClick = (uuid) => {
@@ -40,7 +44,14 @@ function Game() {
     if (newFlipped.length === 2) {
       const [first, second] = newFlipped.map(id => cards.find(c => c.uuid === id));
       if (first.id === second.id) {
-        setMatched(prev => [...prev, first.id]);
+        setMatched(prev => {
+          const updated = [...prev, first.id];
+          // to check if game is finished
+          if (updated.length === cards.length / 2) {
+            setEndTime(Date.now());
+          }
+          return updated;
+        });
       }
       setTimeout(() => setFlipped([]), 800);
     }
@@ -48,25 +59,41 @@ function Game() {
 
   const isFlipped = (card) => flipped.includes(card.uuid) || matched.includes(card.id);
 
+  const timeTaken = endTime && startTime ? Math.round((endTime - startTime) / 1000) : null;
+
+  const handleRestart = () => {
+    window.location.reload(); 
+  };
+
   return (
     <div className="game-container">
-      <h4 style={{ textAlign: "center", color: "#5D3A3A", fontWeight: "600", marginBottom: "1px" }}>
-        Mode: {difficulty} 
-      </h4>
-      <h4 style={{ textAlign: "center", color: "#5D3A3A", fontWeight: "600", marginBottom: "20px" }}>
-        Theme: {theme}
+      <h4 style={{ textAlign: "center", color: "#5D3A3A", fontWeight: "600" }}>
+        Mode: {difficulty} | Theme: {theme}
       </h4>
 
-      <div className={`card-grid ${difficulty.toLowerCase()}`}>
-        {cards.map(card => (
-          <Card
-            key={card.uuid}
-            card={card}
-            isFlipped={isFlipped(card)}
-            onClick={handleClick}
-          />
-        ))}
-      </div>
+      {endTime ? (
+        <div style={{ textAlign: "center", marginTop: "30px" }}>
+          <h2>🎉 Well done!</h2>
+          <p>You matched all pairs!</p>
+          <p>⏱ Time: <strong>{timeTaken} sec</strong></p>
+          <p>🧠 Pairs matched: {matched.length}</p>
+          <button onClick={handleRestart} className="btn">Play Again</button>
+          <button onClick={() => navigate("/")} className="btn" style={{ marginLeft: "10px" }}>
+            Return to Menu
+          </button>
+        </div>
+      ) : (
+        <div className={`card-grid ${difficulty.toLowerCase()}`}>
+          {cards.map(card => (
+            <Card
+              key={card.uuid}
+              card={card}
+              isFlipped={isFlipped(card)}
+              onClick={handleClick}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
