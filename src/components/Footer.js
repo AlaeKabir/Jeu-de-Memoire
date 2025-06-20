@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer mt-auto py-4">
       <Container className='text-center'>
         <div className="text-center small">
-          © 2025 MP - Made by Alae & Lina
+          💌 Matching Pairs – Designed with love by Lina & Alae
         </div>
       </Container>
     </footer>

@@ -1,0 +1,83 @@
+.selection-page {
+  text-align: center;
+  padding: 50px 20px;
+  font-family: 'Fredoka', sans-serif;
+  background-color: rgba(240, 232, 237, 0.05);
+  min-height: 100vh;
+}
+
+h3{
+    font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  color: #5D3A3A;
+}
+
+.title {
+  font-family: 'Fredoka', sans-serif;
+  color: #5D3A3A;
+  font-size: 32px;
+  color: #5D3A3A;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin: 30px 0;
+}
+
+.button-group .btn {
+  margin: 10px;
+  padding: 12px 24px;
+  border-radius: 20px;
+  background-color: #FFC1CC;
+  color: #5D3A3A;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button-group .active {
+  background-color: #FF8FAB;
+  color: white;
+}
+
+.theme-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.theme-card {
+  background: #FFEAF4;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-card.active {
+  border-color: #FF8FAB;
+  box-shadow: 0 0 10px #FF8FAB;
+}
+
+.theme-card img {
+  width: 60px;
+  height: 60px;
+}
+
+.start-btn {
+  background-color: #FF8FAB;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: none;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+ background-color: hotpink !important; 
+}

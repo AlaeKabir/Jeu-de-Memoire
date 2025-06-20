@@ -5,11 +5,10 @@ function Home() {
   return (
     <div className="home">
       <h1>Welcome to the Matching Pairs Game!</h1>
-      <p>Test your memory and have fun 🎉</p>
+      <h6>Test your memory and have fun 🎉</h6>
       <nav>
-        <Link to="/game" className="btn">Play the Game</Link>
-        <Link to="/about" className="btn">About Us</Link>
-        <Link to="/contact" className="btn">Feedback / Contact</Link>
+        <Link to="/selection" className="btn">Play the Game</Link>
+        
       </nav>
     </div>
   );

@@ -10,7 +10,7 @@ function NavigationBarFunction() {
           <Navbar.Brand as={Link} to="/">Matching Pairs</Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/game">Play</Nav.Link>
+            <Nav.Link as={Link} to="/selection">Play</Nav.Link>
             <Nav.Link as={Link} to="/about">About us</Nav.Link>
             <Nav.Link as={Link} to="/contact">Feedback</Nav.Link>
           </Nav>

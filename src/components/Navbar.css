@@ -1,10 +1,10 @@
 .custom-navbar {
-  background-color: rgb(247, 205, 241) !important;
+  background-color: #FADADD(247, 205, 241) !important;
 }
 
 .custom-navbar .navbar-brand,
 .custom-navbar .nav-link {
-  color: #6e2359 !important; 
+  color: #5D3A3A !important; 
   font-weight: 600;
 }
 
