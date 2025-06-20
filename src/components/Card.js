@@ -1,13 +1,16 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({ card, isFlipped, onClick }) => (
-  <div className="card" onClick={() => onClick(card.uuid)}>
-    <div className={isFlipped ? "flipped" : ""}>
-      <div className="front">{card.symbol}</div>
-      <div className="back">❓</div>
+function Card({ card, isFlipped, onClick }) {
+  return (
+    <div className="card" onClick={() => onClick(card.uuid)}>
+      {isFlipped ? (
+        <img src={card.img} alt="card" className="card-img" />
+      ) : (
+        <div className="card-back" />
+      )}
     </div>
-  </div>
-);
+  );
+}
 
 export default Card;

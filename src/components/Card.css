@@ -5,36 +5,16 @@
   cursor: pointer;
 }
 
-.card div {
+.card-img {
   width: 100%;
   height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-.card .flipped {
-  transform: rotateY(180deg);
-}
-
-.front, .back {
-  position: absolute;
-  backface-visibility: hidden;
-  background: white;
-  border: 1px solid #ccc;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.card-back {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-}
-
-.back {
-  background: pink;
-}
-
-.front {
-  transform: rotateY(180deg);
+  background-color: #ffc1cc;
+  border-radius: 12px;
 }
