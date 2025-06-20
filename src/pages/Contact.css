@@ -1,0 +1,96 @@
+.contact {
+text-align: center;
+  padding: 50px 20px;
+  font-family: 'Fredoka', sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  color: #5D3A3A;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.timer {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7B5151;
+  margin-bottom: 25px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #FFEAF4;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(255, 192, 203, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #FFC1CC;
+  border-radius: 16px;
+}
+
+.card img {
+  width: 90%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #5D3A3A;
+  margin-bottom: 25px;
+}
+
+  
+.back-btn {
+  background-color: #FF8FAB;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: none;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+ background-color: hotpink !important; 
+}
+

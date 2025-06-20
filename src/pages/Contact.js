@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Contact.css";
 
 function Contact() {
   const [message, setMessage] = useState("");
@@ -15,7 +16,7 @@ function Contact() {
           cols="40"
         />
         <br />
-        <button type="submit">Send</button>
+        <button className="back-btn"type="submit">Send</button>
       </form>
     </div>
   );

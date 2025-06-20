@@ -1,18 +1,15 @@
-.home-page {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  background-color: #FFFFFF; 
-}
 
 
 
 
 .home {
   text-align: center;
-  margin-top: 170px;
- justify-content: center;
+  padding-top: 160px;
+  font-family: 'Fredoka', sans-serif;
+  background-color: #fff;
+  min-height: 81vh;
+  justify-content: center;
+ 
 }
 
 h1, h6{
