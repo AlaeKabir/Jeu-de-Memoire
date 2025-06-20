@@ -1,0 +1,51 @@
+.game-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+  font-family: 'Fredoka', sans-serif;
+}
+
+
+
+
+.card-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+
+.card-grid.easy {
+  grid-template-columns: repeat(3, 100px);
+}
+
+.card-grid.medium {
+  grid-template-columns: repeat(4, 100px);
+}
+
+.card-grid.hard {
+  grid-template-columns: repeat(6, 100px);
+}
+
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #FFEAF4;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
