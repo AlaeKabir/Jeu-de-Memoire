@@ -12,15 +12,16 @@ function Game() {
   const [matched, setMatched] = useState([]);
 
   useEffect(() => {
-    let numberOfPairs = 6;
+    let numberOfPairs = 3;
     if (difficulty === "Medium") numberOfPairs = 9;
     if (difficulty === "Hard") numberOfPairs = 12;
 
     const themeKey = theme.toLowerCase().replace("é", "e").replace(/\s/g, "");
 
+    
     const cardsForTheme = Array.from({ length: numberOfPairs }, (_, index) => ({
       id: index,
-      img: `/assets/${themeKey}/${index + 1}.png`, // Ex: /assets/hellokitty/1.png
+      img: `/assets/${themeKey}/${themeKey}${index + 1}.png`, // 👈 Ex: /assets/hellokitty/hellokitty1.png
     }));
 
     const duplicated = [...cardsForTheme, ...cardsForTheme];
@@ -53,7 +54,7 @@ function Game() {
         Mode: {difficulty} 
       </h4>
       <h4 style={{ textAlign: "center", color: "#5D3A3A", fontWeight: "600", marginBottom: "20px" }}>
-       Theme: {theme}
+        Theme: {theme}
       </h4>
 
       <div className={`card-grid ${difficulty.toLowerCase()}`}>
