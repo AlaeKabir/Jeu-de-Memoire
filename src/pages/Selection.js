@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import "./Selection.css";
 
 
-import helloKittyImg from "../assets/hellokitty.png";
-import natureImg from "../assets/nature.png";
-import starsImg from "../assets/etoile.webp";
+import sanrioKittyImg from "../assets/sanrio.png";
+import carsImg from "../assets/cars.png";
+import minionsImg from "../assets/minions.png";
 
 function Selection() {
   const [difficulty, setDifficulty] = useState("Easy");
-  const [theme, setTheme] = useState("Hello Kitty");
+  const [theme, setTheme] = useState("Sanrio");
   const navigate = useNavigate();
 
   const startGame = () => {
@@ -23,9 +23,9 @@ function Selection() {
 
   
   const themeImages = {
-    "Hello Kitty": helloKittyImg,
-    "Nature": natureImg,
-    "Étoiles": starsImg,
+    "Sanrio": sanrioKittyImg,
+    "Cars": carsImg,
+    "Minions": minionsImg,
   };
 
   return (
@@ -50,7 +50,7 @@ function Selection() {
       <div className="section">
         <h3>Select Theme</h3>
         <div className="theme-options">
-          {["Hello Kitty", "Nature", "Étoiles"].map((t) => (
+          {["Sanrio", "Cars", "Minions"].map((t) => (
             <div
               key={t}
               className={`theme-card ${theme === t ? "active" : ""}`}

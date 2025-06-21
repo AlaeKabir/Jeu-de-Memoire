@@ -7,7 +7,7 @@ function Game() {
   const navigate = useNavigate();
 
   const difficulty = location.state?.selectedDifficulty || "Easy";
-  const theme = location.state?.selectedTheme || "Hello Kitty";
+  const theme = location.state?.selectedTheme || "Sanrio";
 
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
@@ -17,8 +17,8 @@ function Game() {
 
   useEffect(() => {
     let numberOfPairs = 3;
-    if (difficulty === "Medium") numberOfPairs = 9;
-    if (difficulty === "Hard") numberOfPairs = 12;
+    if (difficulty === "Medium") numberOfPairs = 10;
+    if (difficulty === "Hard") numberOfPairs = 15;
 
     const themeKey = theme.toLowerCase().replace("é", "e").replace(/\s/g, "");
 
@@ -65,6 +65,9 @@ function Game() {
     window.location.reload(); 
   };
 
+  const totalCards = cards.length;
+  const columns = Math.ceil(Math.sqrt(totalCards)); // Try to make it square
+
   return (
     <div className="game-container">
       <h4 style={{ textAlign: "center", color: "#5D3A3A", fontWeight: "600" }}>
@@ -78,12 +81,12 @@ function Game() {
           <p>⏱ Time: <strong>{timeTaken} sec</strong></p>
           <p>🧠 Pairs matched: {matched.length}</p>
           <button onClick={handleRestart} className="btn">Play Again</button>
-          <button onClick={() => navigate("/")} className="btn" style={{ marginLeft: "10px" }}>
+          <button onClick={() => navigate("/selection")} className="btn" style={{ marginLeft: "10px" }}>
             Return to Menu
           </button>
         </div>
       ) : (
-        <div className={`card-grid ${difficulty.toLowerCase()}`}>
+        <div className="card-grid" style={{gridTemplateColumns: `repeat(${columns}, 100px)`,}}>
           {cards.map(card => (
             <Card
               key={card.uuid}
