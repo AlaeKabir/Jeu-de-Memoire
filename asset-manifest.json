@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/Jeu-de-Memoire/static/css/main.49036bae.css",
-    "main.js": "/Jeu-de-Memoire/static/js/main.fb1ac45c.js",
+    "main.js": "/Jeu-de-Memoire/static/js/main.bc9acce0.js",
     "static/js/453.8d328d39.chunk.js": "/Jeu-de-Memoire/static/js/453.8d328d39.chunk.js",
     "static/media/cars.png": "/Jeu-de-Memoire/static/media/cars.a644317e9947212580d5.png",
     "static/media/minions.png": "/Jeu-de-Memoire/static/media/minions.ed809c350e113179bc1b.png",
     "static/media/sanrio.png": "/Jeu-de-Memoire/static/media/sanrio.a34d903d047ee704d82d.png",
     "index.html": "/Jeu-de-Memoire/index.html",
     "main.49036bae.css.map": "/Jeu-de-Memoire/static/css/main.49036bae.css.map",
-    "main.fb1ac45c.js.map": "/Jeu-de-Memoire/static/js/main.fb1ac45c.js.map",
+    "main.bc9acce0.js.map": "/Jeu-de-Memoire/static/js/main.bc9acce0.js.map",
     "453.8d328d39.chunk.js.map": "/Jeu-de-Memoire/static/js/453.8d328d39.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49036bae.css",
-    "static/js/main.fb1ac45c.js"
+    "static/js/main.bc9acce0.js"
   ]
 }
